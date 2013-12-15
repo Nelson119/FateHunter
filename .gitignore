@@ -1,0 +1,16 @@
+*.scssc
+*.sassc
+.DS_STORE
+Thumbs.db
+packing
+pack*
+bin/*.xml
+bin/*.refresh
+html/_static/*
+html/_element/*
+html/_sass-cache/*
+html/bin/*
+*.pdb
+*.zip
+*bak*
+psd/*

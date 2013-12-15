@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+
+@function compact($var-1,        $var-2: false,
+                  $var-3: false, $var-4: false,
+                  $var-5: false, $var-6: false,
+                  $var-7: false, $var-8: false,
+                  $var-9: false, $var-10: false) {
+  $full: $var-1;
+  $vars: $var-2, $var-3, $var-4, $var-5,
+         $var-6, $var-7, $var-8, $var-9, $var-10;
+
+  @each $var in $vars {
+    @if $var {
+      $full: $full, $var;
+    }
+  }
+  @return $full;
+}
+
+
+@mixin base-link($color) {
+  text-decoration:none;
+  @if $color == white {
+  color:#fff;
+  &:hover,&:hover *{
+    color:#fff437;
+  }
+  &.active,&.active *{
+    color:#fff437;
+  }
+  }
+  @if $color == black {
+  color:#333;
+  &:hover{
+    color:#00a94f;
+    *{
+      color:#11a747;
+    }
+  }
+  &.active{
+    color:#00a94f;
+    *{
+      color:#11a747;
+    }
+  }
+  }
+  @if $color == grey {
+    color:#535353;
+    &:hover{
+      color:#00a94f;
+      *{
+        color:#00a94f;
+      }
+    }
+    &.active{
+      color:#00a94f;
+      *{
+        color:#00a94f;
+      }
+    }
+  }
+  @if $color == inherit {
+    color: #004A2F;
+    &:hover{
+      color:#00a94f;
+      *{
+        color:#00a94f;
+      }
+    }
+    &.active{
+      color:#00a94f;
+      *{
+        color:#00a94f;
+      }
+    }
+  }
+}
+
+
+
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+@mixin font-smoothing($val: antialiased) {
+	-webkit-font-smoothing: $val;
+	-moz-font-smoothing: $val;
+	-ms-font-smoothing: $val;
+	-o-font-smoothing: $val;
+}
+
+@function em($target) {
+
+@if $target == 0 { @return 0 }
+
+@return $target / 12px + 0em;
+
+}

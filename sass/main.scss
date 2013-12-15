@@ -1,0 +1,21 @@
+﻿
+// Here's where we define some default constants
+@import "partials/base";
+
+// Then we'll import the compass extension
+@import "h5bp";
+
+@import "compass/css3";
+@import "compass/utilities";
+@import "compass/typography";
+@import "compass/utilities/general/clearfix";
+//@import "partials/font-awesome-ie7.min";
+@import "partials/fa/_font-awesome";
+
+// Now, you can simply include everything
+// (except print and helpers) by uncommeting this line
+@include h5bp-normalize;
+@import "partials/utils";
+@import "partials/reset";
+@import "partials/cbox";
+@import "partials/main";

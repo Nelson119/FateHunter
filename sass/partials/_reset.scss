@@ -1,0 +1,45 @@
+html {
+	body{
+		/************* reset *************/
+		font-size:12px;
+		
+		h3,h4,h5{
+			margin: 0;font-size:em(12px);font-weight: normal;
+		}
+		
+		ol,ul,li,dd{
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		a {
+			&:focus{
+			outline:0;
+			}
+			>img{
+			border:0;
+			}
+		}
+		.clearfix{
+			&:before,
+			&:after {
+				content: " "; /* 1 */
+				display: table; /* 2 */
+			}
+			&:after {
+				clear: both;
+			}
+			*zoom: 1;
+		}
+
+		position:relative;
+		width:100%;
+		min-width:940px;	
+	}
+}
