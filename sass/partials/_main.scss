@@ -8,6 +8,10 @@
 		font-family: "微軟正黑體","Microsoft JhengHei", verdana, "LiHei Pro", sans-serif;
 		font-size:13px;
 		font-weight:500;
+		a { 
+			color:#fff;
+			text-decoration:none;
+		}
 		a > img { 
 			border: 0px none; 
 			padding-left: 10px; 
@@ -313,50 +317,94 @@
 			float:left;
 			background:url(../img/common/sidebar-bg.png) no-repeat center top;
 			nav ul{
-				li{
-					a{
-						display:block;
-						width:270px;
-						height:52px;
-						position: relative;
-						background:url(../img/common/nav.png) 0 -20px no-repeat ;	
-						text-indent:-9999em;
-						text-decoration:none;
-						margin: 0 auto;
-						&:after{
-							background:url(../img/common/nav.png) 0 0 no-repeat ;	
-							content: ".";
-							display: block;
-							height: 100%;
-							left: 91px;
-							position: absolute;
-							text-indent: -9999em;
-							top: 0;
-							width: 67px;
-							height: 20px;
-							top: 16px;
+					li{
+						a{
+							display:block;
+							width:270px;
+							height:52px;
+							position: relative;
+							background:url(../img/common/nav.png) 0 -20px no-repeat ;	
+							text-indent:-9999em;
+							text-decoration:none;
+							margin: 0 auto;
+							&:after{
+								background:url(../img/common/nav.png) 0 0 no-repeat ;	
+								content: ".";
+								display: block;
+								height: 100%;
+								left: 91px;
+								position: absolute;
+								text-indent: -9999em;
+								width: 67px;
+								height: 20px;
+								top: 16px;
+							}
 						}
 					}
-					&:nth-child(2){
-						a:after{
-							background-position:-67px 0;	
+				&.news-menu{
+					li{
+						&:nth-child(1){
+							a:after{
+								background-position:0 0;	
+							}
 						}
-					}
-					&:nth-child(3){
-						a:after{
-							background-position:(-67px * 2) 0;	
+						&:nth-child(2){
+							a:after{
+								background-position:-67px 0;	
+							}
 						}
-					}
-					&:nth-child(4){
-						a:after{
-							background-position:(-67px * 3) 0;	
+						&:nth-child(3){
+							a:after{
+								background-position:(-67px * 2) 0;	
+							}
 						}
-					}
-					&:nth-child(5){
-						a:after{
-							background-position:(-67px * 4) 0;	
+						&:nth-child(4){
+							a:after{
+								background-position:(-67px * 3) 0;	
+							}
 						}
+						&:nth-child(5){
+							a:after{
+								background-position:(-67px * 4) 0;	
+							}
+						}
+				
 					}
+				}
+				&.guide-menu{
+					li{
+						opacity:.75;
+						&:nth-child(1){
+							a:after{
+								left:105px;
+								width: 40px;
+								background-position:-335px 0;	
+							}
+						}
+						&:nth-child(2){
+							a:after{
+								background-position:-374px 0;	
+							}
+						}
+						&:nth-child(3){
+							a:after{
+								background-position: -445px 0;	
+							}
+						}
+						&:nth-child(4){
+							a:after{
+								left:73px;
+								width: 103px;
+								background-position:-516px 0;	
+							}
+						}	
+						&:hover{
+							box-shadow:inset 0 0 25px rgb(0,0,0);
+						}
+						&.active{
+							opacity:inherit;
+						}			
+					}				
 				}
 			}
 			nav aside{
@@ -766,7 +814,7 @@
 								float: left;
 								width:120px;
 								height:120px;
-								background : url(../img/hero/skill-bg.png);
+								background : url(../img/common/skill-bg.png);
 								img{
 									margin:15px;
 								}
@@ -800,6 +848,219 @@
 								}
 							}
 						
+						}
+					}
+				}
+			}
+			.guide{
+				margin-left:50px;
+				color:#fff;
+				nav.card-categories{
+					margin-bottom:32px;
+					li{
+						a{
+							display:block;
+							float:left;
+							font-size:18px;
+							&:after{
+								width:26px;
+								text-align:center;
+								display:block;
+								margin-top:5px;
+								float:right;
+								content:"|";
+								font-size:10px;
+								color:#fff;
+							}
+						}
+						&.active{
+							a{
+								color:#fff09c;
+							}
+						}
+						&:last-child{
+							a:after{
+								display:none;
+							}
+						}
+					}
+				}
+
+				.hint{
+					color:#fff;
+					line-height:24px;
+					&:before{
+						content:"* ";
+					}
+				}
+				table{
+					border-collapse: separate;
+					border-spacing: 1px;
+					background-color:#4f4f4f;
+					th,td{
+						background-color:#000;
+						text-align:left;
+						padding:7px;
+					}
+					tr:last-child{
+						td{
+							padding:14px 7px;
+						}
+					}
+				}
+				h3{
+					color:#008aff;
+					font-size:30px;
+					padding-bottom:14px;
+				}
+				.card-fate{
+					margin-top:20px;
+					li{
+					    margin-top: 15px;
+					}
+					.pic{
+						float:left;
+						display:block;
+						width:187px;
+						height:281px;
+						background:url(../img/card-fate/card-bg.png);
+						figure{
+							margin:22px 0 0 15px
+						}
+					}
+					.detail{
+						float:right;
+						width:690px;
+						th,td{
+							text-align:left;
+							padding:7px;
+							h5{
+								color:#fff09c;
+								font-size:16px;
+							}
+						}
+						th{
+							b{
+								font-size:24px;
+								&:before{
+									color:#fff09c;
+									font-size:16px;
+									content:" : "
+								}
+								&.gold{
+									color:#ecc93b;
+								}
+								&.silver{
+									color:#cbcbcb;
+								}
+								&.copper{
+									color:#c75b31;
+								}
+							}
+						}
+						td{
+							font-size:14px;
+							color:#fff;
+						}
+					}
+				}
+
+				.card-force{
+					h3.series{
+						background:url(../img/card-force/series-bg.png) repeat-y;
+						font-size:20px;
+						line-height:46px;
+						padding-left:13px;
+						font-weight:600;
+						margin:32px 0 20px;
+						color:#000;
+						padding-bottom:0;
+					}
+					li{
+						margin-top:45px;
+						&:first-child{
+							margin-top:0;
+						}
+						&:last-child{
+							margin-bottom:20px;
+						}
+					}
+					aside{
+						float:left;
+						h3{
+							span{
+								color:#fff09c;
+								font-size:18px;
+								&:before{
+									content:"  ";
+									padding: 2px;
+								}
+							}
+						}
+						figure{
+							display:block;
+							width:120px;
+							height:120px;
+							background : url(../img/common/skill-bg.png) center center no-repeat;
+							margin: 15px 15px 15px 0;
+							img{
+								margin:11px;
+							}
+						}
+						&:nth-child(2){
+							width:710px;
+						}
+					}
+					table{
+						width:100%;
+					}
+					th{
+						color:#fff09c;
+						font-size:18px;
+						text-align:center;
+						&:nth-child(1),&:nth-child(2),&:nth-child(3){
+							width:66px;
+						}
+						&:nth-child(4),&:nth-child(5),&:nth-child(6){
+							width:126px;
+						}
+					}
+					td{
+					    vertical-align: top;
+					}
+				}
+				.card-blueprint{
+					h3.series{
+						background:url(../img/card-blueprint/series-bg.png) repeat-y;
+						font-size:20px;
+						line-height:46px;
+						padding-left:13px;
+						font-weight:600;
+						margin:32px 0 20px;
+						color:#000;
+						padding-bottom:0;
+					}
+					aside{
+						float:left;
+						figure{
+							display:block;
+							width:120px;
+							height:120px;
+							background : url(../img/common/skill-bg.png) center center no-repeat;
+							margin: 15px 15px 15px 0;
+							img{
+								margin:11px;
+							}
+						}
+						&:nth-child(2){
+							width:300px;
+						}
+					}
+					>ul{
+						>li{
+							display:block;
+							float:left;
+							width:50%;
 						}
 					}
 				}
